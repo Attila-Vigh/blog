@@ -1,8 +1,8 @@
 import { Router } from "express";
-import students from "./students/router.js";
+import authors from "./authors/router.js";
 
 const services = Router();
 
-services.use("/authors", students);
+services.use("/authors", authors);
 
 export default services;

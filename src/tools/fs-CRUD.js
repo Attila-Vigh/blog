@@ -1,8 +1,5 @@
-import { dirname, join, extname } from "path";
-import { fileURLToPath } from "url";
 import uniqid from "uniqid";
 import fs from "fs-extra";
-import { write } from "fs";
 
 export const readData = async (filePath) => {
     try {
@@ -17,6 +14,7 @@ export const readData = async (filePath) => {
 export const findById = async (id, filePath) => {
     try {
         const data = await fs.readJSON(filePath);
+        console.log(data);
         const findData = data.find(item => item.id === id);
         if (findData)
             return findData;
